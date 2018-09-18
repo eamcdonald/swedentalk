@@ -1,0 +1,271 @@
+\documentclass{beamer} 
+\usetheme{CambridgeUS}
+\usepackage{enumerate}
+
+
+\usepackage{color} 
+
+\theoremstyle{definition} 
+\newtheorem{defi}{Definition}  
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+\newtheorem{quest}{Question}
+\newtheorem{conj}{Conjecture}
+\newtheorem{ex}{Example}
+
+\title[Geometric measure via singular traces]{Geometric measure on quasi-Fuchsian groups\\ via singular traces. Part II.}
+\author[Dmitriy Zanin]{Dmitriy Zanin\\
+(in collaboration with A. Connes and F. Sukochev)}
+\institute[]{University of New South Wales}
+
+\begin{document}
+
+\begin{frame} 
+\titlepage
+\end{frame}
+
+\section{Part (a) of the main result}
+
+\begin{frame}
+\frametitle{What exactly to prove?}
+
+We aim to prove $[F,M_Z]\in\mathcal{L}_{p,\infty},$ where $p$ is the Hausdorff dimension of $\Lambda(G).$
+
+By Peller theorem, it suffices to show that
+$$k\in L_{p,\infty}(\mathbb{D},(1-|z|^2)^{-2}dzd\bar{z}).$$
+Here,
+$$k(z)=Z'(z)(1-|z|^2),\quad |z|<1.$$
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Fuchsian group conjugate to $G$}
+
+Consider $G$ acting on $\Lambda(G)_{{\rm int}}.$ Let $\pi$ be the action of $G$ on the unit disk by the
+formula
+$$g\circ Z=Z\circ\pi(g),\quad g\in G.$$
+Every $\pi(g)$ is a conformal automorphism of the unit disk; hence, $\pi(g)$ is fractional linear.
+
+Thus, $\pi(G)$ is a group of fractional linear transformations preserving the unit circle, i.e. a Fuchsian group and it’s limit set is the unit circle $\mathbb{T},$ thus it is Fuchsian of the first kind. As a group, $\pi(G)$ is isomorphic to $G$ and is, therefore, finitely generated.
+\end{frame}
+
+
+\begin{frame}
+\frametitle{No parabolic elements in the conjugate Fuchsian group}
+
+
+
+We claim that the Fuchsian group $\pi(G)$ does not contain parabolic elements. Assume the contrary: let $g\in G$ be such that $\pi(g)$ is parabolic. Hence, there exists a fixed point $w_0\in\mathbb{T}$ of $\pi(g)$ such that
+$$(\pi(g))^nw\to w_0,\quad n\to\pm\infty$$
+for every $w\in\mathbb{D}.$ Let $w=Z(z),$ $z\in\Lambda(G)_{{\rm int}}$ and let $w_0=Z(z_0),$ $z_0\in\Lambda(G).$ Clearly, 
+$$g^n(z)\to z_0,\quad n\to\pm\infty.$$
+Hence, $g\in G$ is parabolic, which is not the case (we made an assumption that $G$ does not contain parabolic elements).
+\end{frame}
+
+\begin{frame}
+\frametitle{Riemann surface of conjugate Fuchsian group is compact}
+
+The assertion below is Theorem 10.4.3 in [Beardon].
+
+\begin{thm} If $\Gamma$ is a finitely generated Fuchsian group of the first kind, then Riemann surface $\mathbb{D}/\Gamma$ has finite area.
+\end{thm}
+
+The assertion below is Corollary 4.2.7 in [Katok]. 
+
+\begin{thm} If $\Gamma$ is a Fuchsian group without parabolic elements such that Riemann surface $\mathbb{D}/\Gamma$ has finite area, then $\mathbb{D}/\Gamma$ is compact.
+\end{thm}
+
+A combination of these assertions yields that Riemann surface of $\pi(G)$ is compact.
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Fundamental domain of conjugate Fuchsian group is compactly supported in $\mathbb{D}.$}
+
+The assertion below is a combination of Corollary 4.2.3 and Theorem 3.2.2 in [Katok].
+
+\begin{thm} If $\Gamma$ is a Fuchsian group whose Riemann surface $\mathbb{D}/\Gamma$ is compact, then there exists a compact fundamental domain $\mathbb{F}$ of $\Gamma.$
+
+\end{thm}
+
+In particular, $\pi(G)$ admits a fundamental domain $\mathbb{F}$ which is compactly supported in $\mathbb{D}.$
+\end{frame}
+
+\begin{frame}
+\frametitle{The usage of compact fundamental domains}
+\begin{lem} We have
+$$\sup_{z\in\pi(g)\mathbb{F}}(1-|z|^2)|Z'(z)|\leq\frac{{\rm const}}{|g_{21}|^2}.$$
+\end{lem}
+\begin{proof} Let $z=\pi(g)w$ with $w\in\mathbb{F}.$ Conformal invariance of hyperbolic metric and the chain rule yield
+$$(1-|z|^2)|Z'(z)|=|g'(Z(w))|\cdot(1-|w|^2)|Z'(w)|.$$
+Obviously,
+$$|g'(Z(w))|=|g_{21}Z(w)+g_{22}|^{-2}=|g_{21}|^{-2}\cdot |Z(w)-g^{-1}(\infty)|^{-2}.$$
+The first factor is bounded by $|g_{21}|^{-2}$ and the second one is bounded.
+\end{proof}
+\end{frame}
+
+\begin{frame}
+\frametitle{Critical exponent of the group $G$}
+For a Kleinian group $G,$ the series
+$$\sum_{g\in G}|g'(z)|^2$$
+converges for almost every (with respect to Lebesgue measure) $z\in\bar{\mathbb{C}}.$
+
+The critical exponent of $G$ is defined as follows
+$$p=\inf\Big\{q:\ \sum_{g\in G}|g'(z)|^q\mbox{ converges for a.e. }z\in\bar{\mathbb{C}}\Big\}.$$
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Proof of the main result, part (a)}
+$G$  is a quasiconformal deformation of a Fuchsian group of the first kind. In particular, its limit set $\Lambda(G)$ is a quasi-circle. Hence, the Hausdorff dimension of $\Lambda(G)$ is strictly less than 2.
+
+$G$ is finitely generated and, by the Ahlfors Finiteness Theorem, $G$ is analytically finite. By Bishop-Jones theorem, $G$ is geometrically finite. In particular, its critical exponent $p$ equals to the Hausdorff dimension.
+
+A few hours of meditation over [Sullivan] deliver that $\{\|g\|_{\infty}^{-2}\}_{g\in G}\in l_{p,\infty}.$ Hence, also $\{g_{21}^{-2}\}_{1\neq g\in G}\in l_{p,\infty}.$ By the above lemma, we have that 
+$$k\in L_{p,\infty}(\mathbb{D},(1-|z|^2)^{-2}dzd\bar{z}).$$
+\end{frame}
+
+\section{Part (b) of the main result}
+
+\begin{frame}
+\frametitle{Restatement}
+Let $\nu$ be a finite measure such that
+$$\varphi(M_{f\circ Z}|[F,M_Z]|^p)=\int_{\Lambda(G)}f(z)d\nu(z).$$
+We aim to show that
+$$d(\nu\circ g)(z)=|g'(z)|^pd\nu(z).$$
+Equivalently, we want 
+$$\varphi(M_{f\circ g^{-1}\circ Z}|[F,M_Z]|^p)=\varphi(M_{(f|g'|^p)\circ Z}|[F,M_Z]|^p).$$
+\end{frame}
+
+\begin{frame}
+\frametitle{Represenation of ${\rm SU}(1,1)$ commutes with $F$}
+Let
+$$(U_h\xi)(z)=\frac1{\bar{\beta}z+\bar{\alpha}}\xi(\frac{\alpha z+\beta}{\bar{\beta}z+\bar{\alpha}})$$
+for every $\xi\in L_2(\mathbb{T})$ and for every $z\in\mathbb{T}.$ Here,
+$$h=
+\begin{pmatrix}
+\alpha&\beta\\
+\bar{\beta}&\bar{\alpha}
+\end{pmatrix},\quad
+|\alpha|^2-|\beta|^2=1.
+$$
+
+\begin{lemma} The mapping $h\to U_h$ is a unitary representation of the group ${\rm SU}(1,1)$ which commutes with $F.$
+\end{lemma}
+\end{frame}
+
+\begin{frame}
+\frametitle{Idea of the proof}
+We have
+$$U_{\pi(g)}\cdot M_{f\circ g^{-1}\circ Z}|[F,M_Z]|^p\cdot U_{\pi(g)}^{-1}=M_{f\circ Z}|[F,M_{g\circ Z}]|^p.$$
+Hence,
+$$\varphi(M_{f\circ g^{-1}\circ Z}|[F,M_Z]|^p)=\varphi(M_{f\circ Z}|[F,M_{g\circ Z}]|^p).$$
+
+{\bf IF WE HAD}
+$$|[F,M_{g\circ Z}]|^p-[F,M_{g\circ Z}]|^p|g'(Z)|^p|\in (\mathcal{L}_{1,\infty})_0,$$
+then
+$$\varphi(M_{f\circ g^{-1}\circ Z}|[F,M_Z]|^p)=\varphi(M_{(f|g'|^p)\circ Z}|[F,M_Z]|^p).$$
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Core lemma}
+
+\begin{lemma} Let $0\leq A\in\mathcal{L}_{\infty}$ and $0\leq B\in\mathcal{L}_{p,\infty}$ be such that $[A^{\frac12},B]\in (\mathcal{L}_{p,\infty})_0,$ then
+$$B^pA^p-(A^{\frac12}BA^{\frac12})^p\in (\mathcal{L}_{1,\infty})_0.$$
+\end{lemma}
+
+Set $A=M_{|g'|\circ Z}$ and $B=[F,M_{f\circ Z}].$ Long but elementary computation shows that
+$$|[F,M_{g\circ Z}]|^p-(A^{\frac12}BA^{\frac12})^p\in (\mathcal{L}_{1,\infty})_0.$$
+Applying the lemma, we obtain
+$$|[F,M_{g\circ Z}]|^p-B^pA^p\in (\mathcal{L}_{1,\infty})_0.$$
+\end{frame}
+
+\section{Proof of the core lemma}
+
+\begin{frame}
+\begin{lemma} Let $X,Y\geq0.$ There exists a Schwartz function $g_p$ such that
+$$X^p-Y^p=V-\int_{\mathbb{R}}X^{is}VY^{-is}g_p(s)ds,$$
+where
+$$V=X^{p-1}(X-Y)+(X-Y)Y^{p-1}.$$
+\end{lemma}
+\begin{proof} It suffices to prove the assertion for the case when $X$ and $Y$ have finite spectra. Multiplying equality on the left by $\chi_{\{\lambda\}}(X)$ and on the right by $\chi_{\{\mu\}}(Y),$ it suffices to prove that
+$$\lambda^p-\mu^p=(\lambda-\mu)(\lambda^{p-1}+\mu^{p-1})\cdot\Big(1-\int_{\mathbb{R}}\lambda^{is}\mu^{-is}g_p(s)ds\Big).$$
+This is a commutative assertion which can be verified directly.
+\end{proof}
+\end{frame}
+
+\begin{frame}
+\begin{lemma} Let $A,B\geq0.$ We have
+$$B^pA^p-Y^p=T(0)-\int_{\mathbb{R}}T(s)g_p(s)ds,$$
+where $Y=A^{\frac12}BA^{\frac12}$ and
+$$T(s)=B^{p-1+is}[B,A^{p-\frac12+is}]A^{\frac12}Y^{-is}+B^{is}[B,A^{\frac12+is}]A^{\frac12}Y^{p-1-is}.$$
+\end{lemma}
+Again, it suffices to prove the assertion for the case when $B$ has finite spectrum.
+\end{frame}
+
+\begin{frame}
+\begin{proof} If $B=\sum_j\lambda_jp_j,$ then
+$$B^pA^p-Y^p=\sum_jp_j((\lambda_jA)^p-Y^p).$$
+Applying the preceding lemma to $X=\lambda_jA$ and $Y,$ we obtain
+$$B^pA^p-Y^p=\sum_jp_j\Big(V_j-\int_{\mathbb{R}}(\lambda_jA)^{is}V_jY^{-is}g_p(s)ds\Big)=$$
+$$=\Big(\sum_jp_jV_j\Big)-\int_{\mathbb{R}}\Big(\sum_jp_j(\lambda_jA)^{is}V_jY^{-is}\Big)g_p(s)ds.$$
+Here,
+$$V_j=(\lambda_jA)^{p-1}(\lambda_jA-Y)+(\lambda_jA-Y)Y^{p-1}.$$
+\end{proof}
+\end{frame}
+
+\begin{frame}
+\begin{proof}
+Note that
+$$\sum_jp_jV_j=\sum_jp_j(\lambda_j^pA^p-\lambda_j^{p-1}A^{p-1}Y+\lambda_jAY^{p-1}-Y^p)=$$
+$$=\Big(\sum_j\lambda_j^pp_j\Big)A^p-\Big(\sum_j\lambda_j^{p-1}p_j\Big)A^{p-1}Y+$$
+$$+\Big(\sum_j\lambda_jp_j\Big)AY^{p-1}-\Big(\sum_jp_j\Big)Y^p=$$
+$$=B^pA^p-B^{p-1}A^{p-1}Y+BAY^{p-1}-Y^p=T(0).$$
+Similarly,
+$$\sum_jp_j(\lambda_jA)^{is}V_jY^{-is}=T(s).$$
+\end{proof}
+\end{frame}
+
+\begin{frame}
+\frametitle{Proof of the core lemma I}
+We are now ready to prove the core lemma.
+\begin{proof} We write
+$$B^pA^p-Y^p=B^{p-1}\cdot I+II\cdot Y^{p-1},$$
+where
+$$I=[B,A^{p-\frac12}]A^{\frac12}+\int_{\mathbb{R}}B^{is}[B,A^{p-\frac12+is}]A^{\frac12}Y^{-is}g_p(s)ds,$$
+$$II=[B,A^{\frac12}]A^{\frac12}+\int_{\mathbb{R}}B^{is}[B,A^{\frac12+is}]A^{\frac12}Y^{-is}g_p(s)ds.$$
+By H\"older inequality, it suffices to show that $I,II\in(\mathcal{L}_{p,\infty})_0.$
+\end{proof}
+\end{frame}
+
+\begin{frame}
+\frametitle{Proof of the core lemma II}
+Consider I. We have
+$$[B,A^{p-\frac12+is}]\in (\mathcal{L}_{p,\infty})_0$$
+and
+$$\|[B,A^{p-\frac12+is}]\|_{p,\infty}\leq(1+|s|)\|A\|_{\infty}^{p-1}\|[B,A^{\frac12}]\|_{p,\infty}.$$
+
+The integrand is measurable in weak operator topology. Since $(\mathcal{L}_{p,\infty})_0$ is a separable Banach space, it follows that integrand is Bochner measurable in $(\mathcal{L}_{p,\infty})_0.$ Since
+$$\int_{\mathbb{R}}(1+|s|)|g_p(s)|ds<\infty,$$
+it follows that the integrand is Bochner integrable. Hence, $I\in (\mathcal{L}_{p,\infty})_0.$
+
+Similarly, $II\in (\mathcal{L}_{p,\infty})_0.$
+\end{frame}
+
+
+
+
+
+\begin{frame}
+
+{\bf\Huge THANK YOU FOR YOUR ATTENTION}
+\end{frame}
+
+
+
+
+\end{document}
+

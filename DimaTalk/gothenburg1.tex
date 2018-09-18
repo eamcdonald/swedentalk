@@ -1,0 +1,320 @@
+\documentclass{beamer} 
+\usetheme{CambridgeUS}
+\usepackage{enumerate}
+
+
+\usepackage{color} 
+
+\theoremstyle{definition} 
+\newtheorem{defi}{Definition}  
+\newtheorem{thm}{Theorem}
+\newtheorem{quest}{Question}
+\newtheorem{conj}{Conjecture}
+\newtheorem{ex}{Example}
+
+\title[Geometric measure via singular traces]{Geometric measure on quasi-Fuchsian groups\\ via singular traces. Part I.}
+\author[Dmitriy Zanin]{Dmitriy Zanin\\
+(in collaboration with A. Connes and F. Sukochev)}
+\institute[]{University of New South Wales}
+
+\begin{document}
+
+\begin{frame} 
+\titlepage
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}
+\frametitle{Kleinian groups: basics}
+
+We let ${\rm SL}(2,\mathbb{C})$ be the group of all $2\times 2$ complex matrices with determinant 1. We identify the group ${\rm PSL}(2,\mathbb{C})={\rm SL}(2,\mathbb{C})/\{\pm 1\}$ and its action on the complex sphere $\bar{\mathbb{C}}$ by fractional linear transformations. The matrix
+$$g=
+\begin{pmatrix}
+g_{11}&g_{12}\\
+g_{21}&g_{22}
+\end{pmatrix}
+\mbox{ is identified with the mapping }
+z\to\frac{g_{11}z+g_{12}}{g_{21}z+g_{22}}.$$
+
+We use the following definition of a Kleinian group.
+
+\begin{defi} Let $G\subset {\rm PSL}(2,\mathbb{C})$ be a discrete subgroup. We say that
+\begin{enumerate}[{\rm (a)}]
+\item $G$ is regular at the point $z\in\bar{\mathbb{C}}$ if there exists a neighborhood $U\ni z$ such that $g(U)\cap U=\varnothing$ for all but finitely many $g\in G.$
+\item $G$ is Kleinian if it is regular at some point $z\in\bar{\mathbb{C}}.$
+\end{enumerate}
+\end{defi}
+\end{frame}
+
+\begin{frame}
+\frametitle{Limit set of a Kleinian group}
+
+\begin{defi} Let $G$ be a Kleinian group.
+\begin{enumerate}[{\rm (a)}]
+\item the set of all points at which $G$ is regular is called a regular set of $G.$
+\item the complement of the regular set is called a limit set of $G.$
+\end{enumerate}
+\end{defi}
+
+
+The limit set is denoted by $\Lambda(G).$ In the theory of Kleinian groups it plays the same role as the Julia set in conformal dynamics.
+
+By definition, $\Lambda(G)$ is a closed $G-$invariant set. One can show that $\Lambda(G)$ is nowhere dense.
+
+Usually, $\Lambda(G)$ is a perfect set (i.e., every point is an accumulation point). Exceptions are so-called elementary Kleinian groups, whose limit sets contain at most $2$ points.
+\end{frame}
+
+\begin{frame}
+\frametitle{Fuchsian and quasi-Fuchsian groups}
+
+\begin{defi} A Kleinian group $G$ is called
+\begin{enumerate}[{\rm (a)}]
+\item Fuchsian (of the first kind) if its limit set is a circle.
+\item quasi-Fuchsian if its limit set is a Jordan curve.
+\end{enumerate}
+\end{defi}
+
+In this talk, we are mostly interested in finitely generated quasi-Fuchsian groups.
+
+By analogue with the Julia sets, one would expect that a limit set of a quasi-Fuchsian group is a fractal curve. In particular, one would expect that its Hausdorff dimension is strictly greater than $1.$
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Hausdorff dimension of the limit set}
+
+\begin{defi} We say that the Hausdorff dimension of a set $X\subset\mathbb{C}$ is less than $q$ if, for every $\epsilon>0,$ there exist balls $(B(a_i,r_i))_{i\in I}$ such that 
+$$X\subset\bigcup_{i\in I}B(a_i,r_i),\quad \sum_{i\in I}r_i^q<\epsilon.$$
+The infimum of all such $q$ is called the Hausdorff dimension of a set $X.$
+\end{defi}
+
+\begin{thm} Let $G$ be a finitely generated quasi-Fuchsian (but not Fuchsian) group. Its limit set $\Lambda(G)$ has Hausdorff dimension strictly greater than 1.
+\end{thm}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Geometric measure}
+
+\begin{defi} Let $G$ be a Kleinian group. The measure $\nu$ on $\bar{\mathbb{C}}$ is called $p-$dimensional geometric (relative to $G$) if 
+$$d(\nu\circ g)(z)=|g'(z)|^pd\nu(z)$$
+for every $g\in G.$
+\end{defi}
+
+We are particularly interested in the case when $p$ is the Hausdorff dimension of $\Lambda(G).$
+
+\begin{thm} [Sullivan] Let $G$ be a geometrically finite Kleinian group. If $p$ is the Hausdorff dimension of $\Lambda(G),$ then $p<2$ and there exists a unique $p-$dimensional geometric measure supported on $\Lambda(G).$ 
+\end{thm}
+\end{frame}
+
+\begin{frame}
+\frametitle{How to express geometric measure?}
+
+Geometric measures are contructed by means of a complicated process. It is strongly desirable to have a simple and accessible construction.
+
+\begin{quest} Is there any construction of geometric measure from the first principles?
+\end{quest}
+
+In this talk, we propose such a construction for the special case of finitely generated quasi-Fuchsian groups. The only components of these construction are
+\begin{enumerate}
+\item Riemann mapping theorem
+\item Hilbert transform 
+\item trace on $\mathcal{L}_{1,\infty}$
+\end{enumerate}
+\end{frame}
+
+\section{Preliminary material: traces}
+
+\begin{frame} 
+\frametitle{General information}
+
+Let $\mathcal{L}_{\infty}$ be the $*-$algebra of all bounded operators on a given (separable, infinite dimensional) Hilbert space $H.$ 
+
+An operator is called compact if it can be approximated (in norm topology, with any given precision) by a finite rank operator. Spectrum of a compact operator consists of non-zero eigenvalues of finite multiplicity converging to $0$ (which may or may not be an eigenvalue). 
+
+If $A$ is compact, then $|A|$ is compact. Eigenvalues of $|A|$ are called singular values of $A.$
+
+For a compact operator $A,$ we define its singular value sequence $\mu(A)=(\mu(k,A))_{k\geq0}$ by arranging the eigenvalues of $|A|$ in the decreasing order and taking them with multiplicities.
+\end{frame}
+
+\begin{frame}
+\frametitle{Ideals and infinitesimals}
+
+An ideal $\mathcal{I}$ in $\mathcal{L}_{\infty}$ is a linear subspace (usually {\it not} closed in norm) such that $A\in\mathcal{I}$ and $B\in\mathcal{L}_{\infty}$ implies that $AB,BA\in\mathcal{I}.$ Ideal is called principal if it is generated by a single element. Every non-trivial ideal in $\mathcal{L}_{\infty}$ consists of compact operators. 
+
+Principal ideal generated by the diagonal operator ${\rm diag}((\frac1{(k+1)^{1/p}})_{k\geq0})$ is called $\mathcal{L}_{p,\infty}.$ For every $p>0,$ it is quasi-Banach (see next page). Equivalently,
+$$\mathcal{L}_{p,\infty}=\Big\{A\in\mathcal{L}_{\infty}:\ \mu(k,A)=O((k+1)^{-\frac1p})\Big\}.$$
+
+In Connes ideology, these are \lq\lq infinitesimals of order $\frac1p$\rq\rq.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Quasi-Banach ideals}
+
+\begin{defi} An ideal $\mathcal{I}$ in $\mathcal{L}_{\infty}$ is called quasi-Banach when equipped with a complete quasi-norm $\|\cdot\|_{\mathcal{I}}$ such that
+$$\|AB\|_{\mathcal{I}},\|BA\|_{\mathcal{I}}\leq\|A\|_{\mathcal{I}}\|B\|_{\infty}.$$
+\end{defi}
+
+For example, a natural quasi-norm on the ideal $\mathcal{L}_{p,\infty}$ is given by the formula
+$$\|A\|_{p,\infty}=\sup_{k\geq0}(k+1)^{\frac1p}\mu(k,A).$$
+When equipped with this quasi-norm, $\mathcal{L}_{p,\infty}$ becomes a quasi-Banach ideal. In fact, for $p>1$ its natural quasi-norm is equivalent to a norm.
+
+We let $(\mathcal{L}_{p,\infty})_0$ to be the closure of finite rank operators with respect to the quasi-norm $\|\cdot\|_{p,\infty}.$
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Traces on ideals}
+
+\begin{defi} Let $\mathcal{I}$ be an ideal in $\mathcal{L}_{\infty}.$ Linear functional $\varphi:\mathcal{I}\to\mathbb{C}$ is called trace if
+$$\varphi(AB)=\varphi(BA),\quad A\in\mathcal{I},\quad B\in\mathcal{L}_{\infty}.$$
+\end{defi}
+Equivalently, for all unitary $U\in\mathcal{L}_{\infty},$
+$$\varphi(U^{-1}AU)=\varphi(A),\quad A\in\mathcal{I}.$$
+\end{frame}
+
+\begin{frame}
+\frametitle{Traces on ideals: $\mathcal{L}_{p,\infty},$ $p>1$}
+
+\begin{example} For $p>1,$ ideal $\mathcal{L}_{p,\infty}$ does not carry any trace.
+\end{example}
+\begin{proof} If $X\in\mathcal{L}_{p,\infty},$ then there exist $(X_k)_{k=1}^{20}\subset\mathcal{L}_{p,\infty}$ and $(Y_k)_{k=1}^{20}\subset\mathcal{L}_{\infty}$ such that
+$$X=\sum_{k=1}^{20}[X_k,Y_k].$$
+Hence, for every trace $\varphi,$ we have
+$$\varphi(X)=\sum_{k=1}^{20}\varphi(X_kY_k)-\varphi(Y_kX_k)=0.$$
+\end{proof}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Traces on ideals: $\mathcal{L}_{1,\infty}$}
+
+Ideal $\mathcal{L}_{1,\infty}$ carries a plethora of traces. The most famous one is due to Dixmier.
+
+\begin{definition} Let $\omega$ be a free ultrafilter on $\mathbb{Z}_+.$ The mapping
+$${\rm Tr}_{\omega}:A\to\lim_{n\to\omega}\frac1{\log(n+2)}\sum_{k=0}^n\mu(k,A),\quad 0\leq A\in\mathcal{L}_{1,\infty}$$
+is additive. Its linear extension to $\mathcal{L}_{1,\infty}$ is called Dixmier trace.
+\end{definition}
+\end{frame}
+
+\begin{frame}
+\frametitle{Traces on $\mathcal{L}_{1,\infty}:$ further properties}
+\begin{enumerate}
+\item Every Dixmier trace is positive.
+\item Every positive trace on $\mathcal{L}_{1,\infty}$ is continuous.
+\item Every continuous trace on $\mathcal{L}_{1,\infty}$ is a linear combination of positive ones.
+\item There are continuous traces on $\mathcal{L}_{1,\infty}$ which are not Dixmier traces.
+\item There are traces on $\mathcal{L}_{1,\infty}$ which fail to be continuous.
+\item There are $2^{2^{\mathbb{N}}}$ continuous traces on $\mathcal{L}_{1,\infty}.$
+\item Every trace on $\mathcal{L}_{1,\infty}$ vanishes on $\mathcal{L}_1.$
+\item Every continuous trace on $\mathcal{L}_{1,\infty}$ vanishes on $(\mathcal{L}_{1,\infty})_0.$
+\end{enumerate}
+\end{frame}
+
+\section{Statement of the main result}
+
+\begin{frame}
+\frametitle{Morphism from $C(\Lambda(G))$ to $C(\mathbb{T})$}
+
+For quasi-Fuchsian group $G,$ the limit set is a Jordan curve. Hence, it divides the complex sphere $\bar{\mathbb{C}}$ into $2$ simply connected parts: $\Lambda(G)_{{\rm int}}$ and $\Lambda(G)_{{\rm ext}}.$ 
+
+Riemann mapping theorem says that a simply connected domain $\Lambda(G)_{{\rm int}}$ is conformally equivalent to the unit disk $\mathbb{D}.$ Let $Z:\mathbb{D}\to \Lambda(G)_{{\rm int}}$ be the conformal equivalence. 
+
+By Caratheodory theorem, $Z$ extends to a homeomorphism $Z:\mathbb{T}\to\Lambda(G).$ We now have a natural morphism 
+$$C(\Lambda(G))\to C(\mathbb{T})\quad f\to f\circ Z.$$
+\end{frame}
+
+\begin{frame}\frametitle{The Hilbert transform}
+The Hilbert space $L_2(\mathbb{T})$ is defined with respect to the arc-length measure (the Haar measure).
+    
+There is the trigonometric orthonormal basis for $L_2(\mathbb{T})$,
+\begin{equation*}
+e_n(z) = z^n,\quad n\in \mathbb{Z}, z \in \mathbb{T}.
+\end{equation*}
+
+The Hilbert transform $F$ is defined on the basis $e_n$ by $Fe_n = {\rm sgn}(n)e_n.$
+\end{frame}
+
+\begin{frame}
+\frametitle{Main theorem}
+
+The assertion below was proposed (without rigorous proof) in the "Noncommutative Geometry" by Connes. Complete proof appeared in a recent paper by the authors.
+
+\begin{thm} Let $G$ be a finitely generated quasi-Fuchsian group without parabolic elements ane let $p$ be the Hausdorff dimension of $\Lambda(G).$ 
+\begin{enumerate}[{\rm (a)}]
+\item $[F,M_Z]\in\mathcal{L}_{p,\infty}$
+\item for every continuous trace $\varphi$ on $\mathcal{L}_{1,\infty}$ and for every $f\in C(\Lambda(G))$ we have
+$$\varphi(M_{f\circ Z}|[F,M_Z]|^p)=c_{\varphi}\int_{\Lambda(G)}f(z)d\nu(z),$$
+where $\nu$ is the unique $p-$dimensional geometric measure on $\Lambda(G).$
+\item there is a positive trace $\varphi$ on $\mathcal{L}_{1,\infty}$ such that $c_{\varphi}>0.$
+\end{enumerate}
+\end{thm}
+\end{frame}
+
+\section{Quantised calculus}
+
+\begin{frame}
+\frametitle{Where $[F,M_h]$ belongs?}
+
+It is a classical result by Kronecker that $[F,M_h]$ is finite rank if and only if $h$ is a rational function.
+
+Nehari proved that $[F,M_h]$ is bounded if and only if $h$ has bounded mean oscillation (in short, $h\in {\rm BMO}$).
+
+It is immediate that $[F,M_h]\in\mathcal{L}_2$ if and only if $h$ belongs to the Sobolev space $W^{\frac12,2}.$
+
+\begin{quest} When $[F,M_h]$ belongs to $\mathcal{L}_{p,\infty}?$
+\end{quest}
+\end{frame}
+
+\begin{frame}
+\frametitle{Peller theorem}
+
+The answer to the question above can be derived from the results by Peller.
+
+\begin{thm} The operator $[F,M_h]$ belongs to $\mathcal{L}_p$ if and only if $h$ belongs to a Besov space $B_p^{\frac1p}.$
+\end{thm}
+
+We want to apply this result to the function $h=Z.$ For this function, we only know the behavior inside $\mathbb{D},$ while its behavior on the boundary is much harder to investigate. It, therefore, makes sense to restate Peller's result in terms of analytic extension of the function $h$ to the unit disk.
+\end{frame}
+
+\begin{frame}
+\frametitle{Restatement of Peller's result for $\mathcal{L}_p,$ $1\leq p\leq 2$}
+
+\begin{thm} Suppose $h$ admits an extension to the unit disk. The operator $[F,h]$ belongs to $\mathcal{L}_1$ if and only if $h''\in L_1(\mathbb{D}).$
+\end{thm}
+
+It is immediate that $[F,M_h]\in\mathcal{L}_2$ if and only if $h''\in L_2(\mathbb{D},(1-|z|^2)dzd\bar{z}).$
+
+An intepolation argument yields
+
+\begin{thm} Suppose $h$ admits an extension to the unit disk. The operator $[F,h]$ belongs to $\mathcal{L}_p$ if and only if $h''\in L_p(\mathbb{D},(1-|z|^2)^{2p-2}dzd\bar{z}).$
+\end{thm}
+\end{frame}
+
+\begin{frame}
+\frametitle{Peller-type result for $\mathcal{L}_{p,\infty},$ $1<p<2$}
+
+Preceding theorem can be simplified for $p>1$ as follows:
+\begin{thm} Suppose $h$ admits an extension to the unit disk. The operator $[F,h]$ belongs to $\mathcal{L}_p$ if and only if $h'\in L_p(\mathbb{D},(1-|z|^2)^{p-2}dzd\bar{z}).$
+\end{thm}
+
+An interpolation argument yields
+
+\begin{thm} Suppose $h$ admits an extension to the unit disk. The operator $[F,h]$ belongs to $\mathcal{L}_{p,\infty}$ if and only if $k\in L_{p,\infty}(\mathbb{D},(1-|z|^2)^{-2}dzd\bar{z}).$ Here,
+$$k(z)=h'(z)(1-|z|^2),\quad |z|<1.$$
+\end{thm}
+\end{frame}
+
+\begin{frame}
+
+
+{\bf\Huge TO BE CONTINUED}
+\end{frame}
+
+
+
+
+\end{document}
+

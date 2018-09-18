@@ -1,0 +1,9 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{Part I: Basic conformal dynamics}{10}{0}{1}
+\beamer@subsectionintoc {1}{1}{Julia sets}{11}{0}{1}
+\beamer@subsectionintoc {1}{2}{Fractal dimensions}{28}{0}{1}
+\beamer@sectionintoc {2}{Part II: The Conformal trace theorem}{34}{0}{2}
+\beamer@subsectionintoc {2}{1}{Non-trivality}{43}{0}{2}
+\beamer@subsectionintoc {2}{2}{Proving conformality}{48}{0}{2}
+\beamer@subsectionintoc {2}{3}{Further directions}{56}{0}{2}
+\beamer@subsectionintoc {2}{4}{The end.}{57}{0}{2}
